@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>kdl-gif-contents</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>049D3643-0418-40B8-B3CC-6140C3267164</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45E21AE0-3D3C-437E-BB07-26165A3C2FF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>45E21AE0-3D3C-437E-BB07-26165A3C2FF0</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Kailey Lampert</string>
+	<key>description</key>
+	<string>Generate a gif from images in selected folder</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Gif Contents</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>GIF contents</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>049D3643-0418-40B8-B3CC-6140C3267164</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># folder with contents to gif-ify
+path={query}
+
+date=`date +%d%m%y%H%M`
+file=~/Desktop/animation-${date}.gif
+
+/usr/local/bin/convert -delay 10 -loop 0 "${path}/*" $file
+
+open -a Finder.app $file</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>45E21AE0-3D3C-437E-BB07-26165A3C2FF0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>049D3643-0418-40B8-B3CC-6140C3267164</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>45E21AE0-3D3C-437E-BB07-26165A3C2FF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>trepmal.com/alfredapp</string>
+</dict>
+</plist>
